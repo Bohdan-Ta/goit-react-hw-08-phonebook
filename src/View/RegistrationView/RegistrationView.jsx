@@ -1,35 +1,35 @@
-import { useDispatch } from "react-redux";
-import { useState } from "react";
-import { authOperations } from "redux/auth";
-import s from "../../components/Forms/Forms.module.css";
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { authOperations } from 'redux/auth';
+import s from '../../components/Forms/Forms.module.css';
 
 export default function RegistrationView() {
   const dispatch = useDispatch();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
-      case "name":
+      case 'name':
         return setName(value);
-      case "email":
+      case 'email':
         return setEmail(value);
-      case "password":
+      case 'password':
         return setPassword(value);
 
       default:
         return;
     }
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     dispatch(authOperations.register({ name, email, password }));
-    setName("");
-    setEmail("");
-    setPassword("");
+    setName('');
+    setEmail('');
+    setPassword('');
   };
-  console.log(handleSubmit);
+
   return (
     <>
       <div className={s.inputContainer}>

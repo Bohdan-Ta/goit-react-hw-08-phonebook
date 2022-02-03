@@ -3,11 +3,11 @@ import { toast } from 'react-toastify';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 axios.defaults.baseURL = 'https://61f16bd6072f86001749f1d6.mockapi.io/';
-// axios.defaults.headers.patch = {
-//   'Content-Type': 'application/json',
-//   'X-Requested-With': 'XMLHttpRequest',
-// };
-export const fetchContactsApi = () => axios('contacts');
+axios.defaults.headers.patch = {
+  'Content-Type': 'application/json',
+  'X-Requested-With': 'XMLHttpRequest',
+};
+export const fetchContactsApi = () => axios.get('contacts');
 export const addContactApi = contact => axios.post('contacts', contact);
 export const deleteContactApi = id => axios.delete(`contacts/${id}`);
 
@@ -21,19 +21,19 @@ export const fetchContacts = createAsyncThunk(
       toast.error(
         `Sorry. Something went wrong. Try loading the page agein... `,
       );
-      return rejectWithValue(error.response.data);
+      return rejectWithValue(error);
     }
   },
 );
 export const addContact = createAsyncThunk(
   'contacts/addContact',
-  async ({ name, number, company }, { rejectWithValue }) => {
+  async ({ name, number }, { rejectWithValue }) => {
     try {
-      const { data } = await addContactApi({ name, number, company });
+      const { data } = await addContactApi({ name, number });
       return data;
     } catch (error) {
       toast.dark(`Sorry. Something went wrong. Try to add a contact again... `);
-      return rejectWithValue(error.response.data);
+      return rejectWithValue(error);
     }
   },
 );
@@ -45,7 +45,7 @@ export const deleteContact = createAsyncThunk(
       await deleteContactApi(id);
       return id;
     } catch (error) {
-      return rejectWithValue(error.response.data);
+      return rejectWithValue(error);
     }
   },
 );

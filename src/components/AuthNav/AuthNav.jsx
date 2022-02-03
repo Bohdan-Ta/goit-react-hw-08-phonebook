@@ -1,6 +1,7 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import s from "../AuthNav/AuthNav.module.css";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+
+import s from '../AuthNav/AuthNav.module.css';
 
 export default function AuthNav() {
   return (
@@ -9,16 +10,16 @@ export default function AuthNav() {
         to="/auth"
         className={s.link}
         style={({ isActive }) => ({
-          color: isActive ? "#2196f3" : "#2a363b",
+          color: isActive ? '#2196f3' : '#2a363b',
         })}
       >
-        LogIn
+        Login
       </NavLink>
       <NavLink
         to="/registration"
         className={s.link}
         style={({ isActive }) => ({
-          color: isActive ? "#2196f3" : "#2a363b",
+          color: isActive ? '#2196f3' : '#2a363b',
         })}
       >
         Register

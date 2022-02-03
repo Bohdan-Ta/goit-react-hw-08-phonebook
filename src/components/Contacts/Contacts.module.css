@@ -17,11 +17,6 @@
   color: antiquewhite;
   text-transform: uppercase;
 }
-.company {
-  padding: 0 2px;
-  color: brown;
-  text-transform: uppercase;
-}
 .totalContact {
   padding-top: 20px;
   font-size: 1rem;
@@ -41,7 +36,7 @@
   border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
   border-image-slice: 1;
   margin: 10px 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   overflow: hidden;
   letter-spacing: 2px;
@@ -49,7 +44,7 @@
   cursor: pointer;
 }
 .slidingButton:before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
