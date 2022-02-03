@@ -1,0 +1,10 @@
+.header {
+  background-color: brown;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}

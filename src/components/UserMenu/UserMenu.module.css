@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.avatar {
+  margin-right: 5px;
+}
+.name {
+  font-size: 24px;
+  margin-right: 10px;
+}
+.button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px 5px;
+  margin: 10px 20px;
+  align-items: center;
+  position: relative;
+  color: antiquewhite;
+  border: 1px solid red;
+  background: none;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}

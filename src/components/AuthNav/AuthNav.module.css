@@ -1,0 +1,22 @@
+.link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: normal;
+  color: #2a363b;
+  font-size: 24px;
+}
+.link::after {
+  content: "";
+  display: block;
+  position: relative;
+  /* z-index: -1; */
+  width: 0%;
+  margin: 5px auto;
+  border-bottom: 3px solid steelblue;
+  bottom: 0.15em;
+  transition: all 1s;
+}
+.link:hover::after {
+  width: 100%;
+}
