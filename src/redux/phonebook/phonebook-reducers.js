@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
+
 import {
   fetchContacts,
   addContact,
@@ -14,12 +14,7 @@ const items = createReducer([], {
   },
 
   [addContact.fulfilled]: (state, { payload }) => {
-    const searchDublicate = state.find(
-      contact => contact.name === payload.name,
-    );
-    if (searchDublicate) {
-      toast.warning(`${payload.name} is already in contacts`);
-    } else return [payload, ...state];
+    state = [payload, ...state];
   },
 
   [deleteContact.fulfilled]: (state, { payload }) => {
