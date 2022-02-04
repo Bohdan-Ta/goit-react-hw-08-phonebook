@@ -61,7 +61,7 @@ export default function RegistrationView() {
           </div>
           <div className={s.inputContainer}>
             <input
-              tipe="password"
+              type="password"
               name="password"
               className={s.input}
               value={password}

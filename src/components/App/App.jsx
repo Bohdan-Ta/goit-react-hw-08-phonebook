@@ -83,9 +83,11 @@ export default function App() {
           <Route
             path="/form"
             element={
-              <Sections title="information about contact">
-                <Forms />
-              </Sections>
+              <PrivateRoute navigateTo="/auth">
+                <Sections title="add information about contact">
+                  <Forms />
+                </Sections>
+              </PrivateRoute>
             }
           />
         </Routes>

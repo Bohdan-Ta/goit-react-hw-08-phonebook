@@ -44,7 +44,7 @@ export default function LoginView() {
           </div>
           <div className={s.inputContainer}>
             <input
-              tipe="password"
+              type="password"
               name="password"
               value={password}
               onChange={handleChange}
