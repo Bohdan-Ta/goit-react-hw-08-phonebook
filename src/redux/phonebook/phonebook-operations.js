@@ -2,11 +2,8 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://61f16bd6072f86001749f1d6.mockapi.io/';
-axios.defaults.headers.patch = {
-  'Content-Type': 'application/json',
-  'X-Requested-With': 'XMLHttpRequest',
-};
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
+
 export const fetchContactsApi = () => axios.get('contacts');
 export const addContactApi = contact => axios.post('contacts', contact);
 export const deleteContactApi = id => axios.delete(`contacts/${id}`);
@@ -21,8 +18,8 @@ export const fetchContacts = createAsyncThunk(
       toast.error(
         `Sorry. Something went wrong. Try loading the page agein... `,
       );
-      return rejectWithValue(error);
     }
+    return rejectWithValue();
   },
 );
 export const addContact = createAsyncThunk(
@@ -33,8 +30,8 @@ export const addContact = createAsyncThunk(
       return data;
     } catch (error) {
       toast.dark(`Sorry. Something went wrong. Try to add a contact again... `);
-      return rejectWithValue(error);
     }
+    return rejectWithValue();
   },
 );
 
@@ -44,8 +41,7 @@ export const deleteContact = createAsyncThunk(
     try {
       await deleteContactApi(id);
       return id;
-    } catch (error) {
-      return rejectWithValue(error);
-    }
+    } catch (error) {}
+    return rejectWithValue();
   },
 );

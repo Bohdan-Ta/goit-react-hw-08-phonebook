@@ -72,7 +72,7 @@ export default function App() {
           <Route
             path="/contacts"
             element={
-              <PrivateRoute navigateTo="/">
+              <PrivateRoute navigateTo="/auth">
                 <Sections title="Contacts">
                   <Filter />
                   <Contacts />

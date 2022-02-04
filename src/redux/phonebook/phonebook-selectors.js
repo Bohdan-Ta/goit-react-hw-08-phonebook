@@ -6,7 +6,8 @@ export const getLoading = state => state.contacts.loading;
 export const getDeleting = state => state.contacts.deleting;
 
 export const getSensitiveSearch = createSelector(
-  [getContacts, getFilter],
+  getContacts,
+  getFilter,
   (contacts, filter) => {
     const lowerCaseLetters = filter.toLowerCase().trim();
     return contacts.filter(contact =>

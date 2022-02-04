@@ -13,21 +13,26 @@ import storage from 'redux-persist/lib/storage';
 import contactsReducer from './phonebook/phonebook-reducers';
 import { authReducer } from './auth';
 
+const middleware = [
+  ...getDefaultMiddleware({
+    serializableCheck: {
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },
+  }),
+];
+
 const authPersistConfig = {
   key: 'auth',
   storage,
   whitelist: ['token'],
 };
+
 export const store = configureStore({
   reducer: {
-    contacts: contactsReducer,
     auth: persistReducer(authPersistConfig, authReducer),
+    contacts: contactsReducer,
   },
-  middleware: getDefaultMiddleware({
-    serializableCheck: {
-      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-    },
-  }),
+  middleware,
   devTools: process.env.NODE_ENV === 'development',
 });
 

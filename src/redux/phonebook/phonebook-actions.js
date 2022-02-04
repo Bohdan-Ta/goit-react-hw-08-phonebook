@@ -1,3 +1,3 @@
-import { createAction } from "@reduxjs/toolkit";
+import { createAction } from '@reduxjs/toolkit';
 
-export const changeFilter = createAction("contact/changeFilter");
+export const changeFilter = createAction('contact/changeFilter');

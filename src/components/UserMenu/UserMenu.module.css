@@ -19,10 +19,18 @@
   position: relative;
   color: antiquewhite;
   border: 1px solid red;
+  border-radius: 5px;
   background: none;
   font-weight: 300;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
   cursor: pointer;
+
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.button:hover {
+  color: #000;
 }
