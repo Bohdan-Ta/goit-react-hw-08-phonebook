@@ -33,7 +33,7 @@ export default function App() {
   }, [dispatch]);
 
   return isFetchingCurrentUser ? (
-    <Spinner />
+    Spinner
   ) : (
     <div className={s.container}>
       <AppBar />

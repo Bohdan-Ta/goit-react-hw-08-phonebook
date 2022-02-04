@@ -1,15 +1,15 @@
-import { Audio } from "react-loader-spinner";
+import { BallTriangle } from 'react-loader-spinner';
 
-import s from "./Spinner.module.css";
+import s from './Spinner.module.css';
 
 export default function Spinner() {
   return (
-    <Audio
+    <BallTriangle
       wrapperClass={s.loader}
       heigth="100"
       width="100"
-      color="brown"
-      ariaLabel="loading"
+      color="grey"
+      ariaLabel="loading-indicator"
     />
   );
 }
