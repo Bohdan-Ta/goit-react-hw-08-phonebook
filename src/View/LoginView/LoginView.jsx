@@ -1,29 +1,29 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { authOperations } from "redux/auth";
-import s from "../../components/Forms/Forms.module.css";
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { authOperations } from 'redux/auth';
+import s from '../../components/Forms/Forms.module.css';
 
 export default function LoginView() {
   const dispatch = useDispatch();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
-      case "email":
+      case 'email':
         return setEmail(value);
-      case "password":
+      case 'password':
         return setPassword(value);
       default:
         return;
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     dispatch(authOperations.logIn({ email, password }));
-    setEmail("");
-    setPassword("");
+    setEmail('');
+    setPassword('');
   };
   return (
     <>
@@ -36,6 +36,7 @@ export default function LoginView() {
               value={email}
               onChange={handleChange}
               className={s.input}
+              placeholder="rav@i.ua"
             />
             <label name="mail" className={s.label}>
               Login:
@@ -48,6 +49,7 @@ export default function LoginView() {
               value={password}
               onChange={handleChange}
               className={s.input}
+              placeholder="12345678"
             />
             <label name="password" className={s.label}>
               Password

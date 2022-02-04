@@ -53,6 +53,7 @@ export default function RegistrationView() {
               className={s.input}
               value={email}
               onChange={handleChange}
+              placeholder="mail@mail.com"
             />
             <label name="email" className={s.label}>
               Login:
