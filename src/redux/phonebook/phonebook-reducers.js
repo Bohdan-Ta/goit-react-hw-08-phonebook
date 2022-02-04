@@ -23,7 +23,7 @@ const items = createReducer([], {
   },
 
   [deleteContact.fulfilled]: (state, { payload }) => {
-    state.filter(({ id }) => id !== payload);
+    return state.filter(({ id }) => id !== payload);
   },
 });
 
