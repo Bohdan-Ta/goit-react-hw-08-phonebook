@@ -52,7 +52,7 @@
 .error {
   position: absolute;
   top: 100%;
-  width: 350px;
+  width: 320px;
   font-size: 14px;
   border-width: 3px;
   border-style: solid;
@@ -71,14 +71,14 @@
   border: 1px solid red;
   background: none;
   font-weight: 300;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
   cursor: pointer;
 }
 .borderButton:before,
 .borderButton:after {
-  content: "";
+  content: '';
   position: absolute;
   width: 0;
   height: 0;

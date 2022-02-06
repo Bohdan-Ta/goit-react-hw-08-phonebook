@@ -53,6 +53,7 @@ export default function Forms() {
             value={formik.values.name}
             className={s.input}
             autoComplete="off"
+            placeholder="Drakula"
           />
           {formik.errors.name}
           <label htmlFor="name" className={s.label}>
@@ -66,6 +67,7 @@ export default function Forms() {
             onChange={formik.handleChange}
             value={formik.values.number}
             className={s.input}
+            placeholder="66666666"
           />
           {formik.errors.number}
           <label className={s.label}>Number:</label>

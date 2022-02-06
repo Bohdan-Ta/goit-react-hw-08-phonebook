@@ -4,12 +4,13 @@
   top: 20px;
   margin-bottom: 100px;
 }
+
 .input {
   display: block;
   width: 130%;
   padding: 0 10px;
   line-height: 40px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.3rem;
   background: none;
   border-width: 0;

@@ -37,61 +37,57 @@ export default function App() {
   ) : (
     <div className={s.container}>
       <AppBar />
-      <Suspense fallback={<Spinner />}>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <PublicRoute>
-                <Sections>
+      <Sections>
+        <Suspense fallback={<Spinner />}>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <PublicRoute>
                   <HomeView />
-                </Sections>
-              </PublicRoute>
-            }
-          />
-          <Route
-            path="/auth"
-            element={
-              <PublicRoute restricted navigateTo="/contacts">
-                <Sections>
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="/auth"
+              element={
+                <PublicRoute restricted navigateTo="/contacts">
                   <LoginView />
-                </Sections>
-              </PublicRoute>
-            }
-          />
-          <Route
-            path="/registration"
-            element={
-              <PublicRoute restricted navigateTo="/contacts">
-                <Sections>
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="/registration"
+              element={
+                <PublicRoute restricted navigateTo="/contacts">
                   <RegistrationView />
-                </Sections>
-              </PublicRoute>
-            }
-          />
-          <Route
-            path="/contacts"
-            element={
-              <PrivateRoute navigateTo="/auth">
-                <Sections title="Contacts">
-                  <Filter />
-                  <Contacts />
-                </Sections>
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/form"
-            element={
-              <PrivateRoute navigateTo="/auth">
-                <Sections title="add information about contact">
-                  <Forms />
-                </Sections>
-              </PrivateRoute>
-            }
-          />
-        </Routes>
-      </Suspense>
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="/contacts"
+              element={
+                <PrivateRoute navigateTo="/auth">
+                  <Sections title="Contacts">
+                    <Filter />
+                    <Contacts />
+                  </Sections>
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/form"
+              element={
+                <PrivateRoute navigateTo="/auth">
+                  <Sections title="add information about contact">
+                    <Forms />
+                  </Sections>
+                </PrivateRoute>
+              }
+            />
+          </Routes>
+        </Suspense>
+      </Sections>
 
       <ToastContainer />
     </div>
