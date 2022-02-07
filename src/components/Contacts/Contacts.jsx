@@ -2,9 +2,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Spinner from '../Spinner';
+import Contact from './Contact';
 
 import { operations, selectors } from 'redux/phonebook';
-import { GrAddCircle } from 'react-icons/gr';
+import { AiOutlineUserAdd } from 'react-icons/ai';
 
 import s from './Contacts.module.css';
 
@@ -12,7 +13,7 @@ export default function Contacts() {
   const history = useNavigate();
 
   const isLoading = useSelector(selectors.getLoading);
-  const deleting = useSelector(selectors.getDeleting);
+  // const deleting = useSelector(selectors.getDeleting);
   const contacts = useSelector(selectors.getSensitiveSearch);
   const dispatch = useDispatch();
 
@@ -30,29 +31,15 @@ export default function Contacts() {
     dispatch(operations.fetchContacts());
   }, [dispatch]);
 
-  const onDeleteContact = id => dispatch(operations.deleteContact(id));
-
   return (
     <>
       {isLoading && <Spinner />}
       <button type="button" onClick={addContact} className={s.addContact}>
-        <GrAddCircle style={{ width: '60', fill: 'gren', height: '60' }} />
+        <AiOutlineUserAdd className={s.icon} />
       </button>
       <ul className={s.box_contacts}>
         {sortContacts.map(({ id, name, number }) => (
-          <li key={id} className={s.list}>
-            <div className={s.datas}>
-              <p className={s.name}>{name}</p>
-              <p className={s.number}>{number}</p>
-            </div>
-            <button
-              onClick={() => onDeleteContact(id)}
-              className={s.slidingButton}
-              disabled={deleting}
-            >
-              {deleting ? '...deleting' : 'delete'}
-            </button>
-          </li>
+          <Contact key={id} id={id} name={name} number={number} />
         ))}
       </ul>
       <p className={s.totalContact}>find contacts: {contacts.length}</p>

@@ -12,6 +12,19 @@
 .datas {
   text-align: left;
 }
+.icon {
+  width: 60px;
+  height: 60px;
+  border: 2px solid white;
+  border-radius: 50%;
+  fill: white;
+  transition: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.icon:hover,
+.icon:focus {
+  fill: steelblue;
+  border-color: brown;
+}
 .name {
   padding: 0 2px;
   color: antiquewhite;
