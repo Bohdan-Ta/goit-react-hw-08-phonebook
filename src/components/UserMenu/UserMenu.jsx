@@ -1,6 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { authSelectors, authOperations } from '../../redux/auth';
+
+import { ImExit } from 'react-icons/im';
 import Avatar from '../../image/avatar.png';
+
 import s from '../UserMenu/UserMenu.module.css';
 
 export default function UserMenu() {
@@ -17,7 +20,7 @@ export default function UserMenu() {
         className={s.button}
         onClick={() => dispatch(authOperations.logOut())}
       >
-        Logout
+        <ImExit size={30} />
       </button>
     </div>
   );

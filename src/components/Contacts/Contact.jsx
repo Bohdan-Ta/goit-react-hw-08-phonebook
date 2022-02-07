@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { operations, selectors } from 'redux/phonebook';
+import { MdOutlineDeleteForever, MdOutlineDeleteSweep } from 'react-icons/md';
 
 import s from './Contacts.module.css';
 
@@ -25,7 +26,11 @@ export default function Contact({ id, name, number }) {
         className={s.slidingButton}
         disabled={deleting}
       >
-        {deleting ? 'deleting' : 'delete'}
+        {deleting ? (
+          <MdOutlineDeleteSweep size={50} />
+        ) : (
+          <MdOutlineDeleteForever size={50} />
+        )}
       </button>
     </li>
   );

@@ -10,15 +10,14 @@ import { AiOutlineUserAdd } from 'react-icons/ai';
 import s from './Contacts.module.css';
 
 export default function Contacts() {
-  const history = useNavigate();
+  const navigateTo = useNavigate();
 
   const isLoading = useSelector(selectors.getLoading);
-  // const deleting = useSelector(selectors.getDeleting);
   const contacts = useSelector(selectors.getSensitiveSearch);
   const dispatch = useDispatch();
 
   const addContact = () => {
-    history('/form');
+    navigateTo('/form');
   };
 
   const sortContacts = contacts.sort(function (a, b) {
