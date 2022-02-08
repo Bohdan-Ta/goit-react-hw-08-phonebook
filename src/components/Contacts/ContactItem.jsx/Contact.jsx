@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { operations, selectors } from 'redux/phonebook';
 import { MdOutlineDeleteForever, MdOutlineDeleteSweep } from 'react-icons/md';
 
-import s from './Contacts.module.css';
+import s from '../Contacts.module.css';
 
 export default function Contact({ id, name, number }) {
   const deleting = useSelector(selectors.getDeleting);

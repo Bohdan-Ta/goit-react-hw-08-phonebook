@@ -1,62 +1,72 @@
-import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 import { authOperations } from 'redux/auth';
-import s from '../../components/Forms/Forms.module.css';
+import s from '../../Forms/Forms.module.css';
 
-export default function LoginView() {
+export default function RegistrationView() {
   const dispatch = useDispatch();
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
+      case 'name':
+        return setName(value);
       case 'email':
         return setEmail(value);
       case 'password':
         return setPassword(value);
+
       default:
         return;
     }
   };
-
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(authOperations.logIn({ email, password }));
+    dispatch(authOperations.register({ name, email, password }));
+    setName('');
     setEmail('');
     setPassword('');
   };
+
   return (
     <>
       <div className={s.inputContainer}>
-        <form onSubmit={handleSubmit} autoComplete="off">
+        <form onSubmit={handleSubmit}>
+          <div className={s.inputContainer}>
+            <input
+              type="text"
+              name="name"
+              className={s.input}
+              value={name}
+              onChange={handleChange}
+            />
+            <label className={s.label}>Name:</label>
+          </div>
           <div className={s.inputContainer}>
             <input
               type="email"
               name="email"
+              className={s.input}
               value={email}
               onChange={handleChange}
-              className={s.input}
-              placeholder="rav@i.ua"
+              placeholder="mail@mail.com"
             />
-            <label name="mail" className={s.label}>
-              Login:
-            </label>
+            <label className={s.label}>Login:</label>
           </div>
           <div className={s.inputContainer}>
             <input
               type="password"
               name="password"
+              className={s.input}
               value={password}
               onChange={handleChange}
-              className={s.input}
-              placeholder="12345678"
             />
-            <label name="password" className={s.label}>
-              Password
-            </label>
+            <label className={s.label}>Password</label>
           </div>
           <button type="submit" className={s.borderButton}>
-            Welcome
+            Submit
           </button>
         </form>
       </div>

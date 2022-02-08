@@ -16,7 +16,7 @@ export const fetchContacts = createAsyncThunk(
       return data;
     } catch (error) {
       toast.error(
-        `Sorry. Something went wrong. Try loading the page agein... `,
+        `Sorry. Something went wrong. Try loading the page again... `,
       );
       return rejectWithValue(error);
     }

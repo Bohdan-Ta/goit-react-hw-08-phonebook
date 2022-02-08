@@ -14,7 +14,7 @@ const items = createReducer([], {
   },
 
   [addContact.fulfilled]: (state, { payload }) => {
-    state = [payload, ...state];
+    return [payload, ...state];
   },
 
   [deleteContact.fulfilled]: (state, { payload }) => {

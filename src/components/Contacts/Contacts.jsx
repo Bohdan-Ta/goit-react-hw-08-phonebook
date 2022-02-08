@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Spinner from '../Spinner';
-import Contact from './Contact';
+import Contact from './ContactItem.jsx/Contact';
 
 import { operations, selectors } from 'redux/phonebook';
 import { AiOutlineUserAdd } from 'react-icons/ai';
