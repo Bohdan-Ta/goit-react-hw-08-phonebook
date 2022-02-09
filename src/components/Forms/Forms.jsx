@@ -48,6 +48,7 @@ export default function Forms() {
         <div className={s.inputContainer}>
           <input
             type="text"
+            id="name"
             name="name"
             onChange={formik.handleChange}
             value={formik.values.name}
@@ -63,11 +64,12 @@ export default function Forms() {
         <div className={s.inputContainer}>
           <input
             type="tel"
+            id="number"
             name="number"
             onChange={formik.handleChange}
             value={formik.values.number}
             className={s.input}
-            placeholder="66666666"
+            placeholder="666"
           />
           {formik.errors.number}
           <label className={s.label}>Number:</label>
