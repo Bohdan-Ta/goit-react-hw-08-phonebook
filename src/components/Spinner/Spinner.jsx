@@ -6,8 +6,8 @@ export default function Spinner() {
   return (
     <BallTriangle
       wrapperClass={s.loader}
-      heigth="80"
-      width="80"
+      heigth="50"
+      width="50"
       color="grey"
       ariaLabel="loading-indicator"
     />
